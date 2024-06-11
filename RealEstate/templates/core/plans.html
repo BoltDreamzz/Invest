@@ -1,0 +1,285 @@
+{%extends 'partials/base2.html'%}
+{%block title%}Plans{%endblock%}
+{%load static%}
+{%block content%}
+<style>
+    body {
+        background: #e9edc9;
+        width: 100%;
+        height: 100%;
+    }
+
+    .content {
+        z-index: 0;
+        margin-top: 10vh;
+
+    }
+
+    .container {
+        margin-bottom: 15px;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ttt {
+        font-size: 1.2em;
+        font-weight: 600;
+    }
+
+    .steez {
+        background: #283618;
+        color: #fff;
+        font-size: 0.8em;
+        padding: 10px 25px;
+        border-radius: 15px;
+    }
+
+    .col-lg-4 img {
+        object-fit: cover;
+
+    }
+    .property-name {
+        font-size: 1.2em;
+        font-weight: 800;
+    }
+    .property-text {
+        font-size: 0.8em;
+        font-weight: 500;
+    }
+    .property-btn {
+        padding: 8px 20px;
+        font-size: 0.8em;
+        font-weight: 500;
+        background: #283618;
+        color: #e9edc9;
+        border-radius: 15px;
+        /* scale: 0; */
+        transition: 0.3s ease;
+    }
+    .property-btn:hover{
+        scale: 1.2;
+        background: #283618;
+        color: #e9edc9;
+
+    }
+</style>
+
+
+<!--GIVEAWAY MODAL -->
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalToggleLabel"><strong>Info</strong></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex flex-column justify-content-center align-items-center">
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <lottie-player src="https://lottie.host/f31261bf-7597-46b5-ab41-e402abddcdf1/GMOcR9x1Yw.json"
+                    background="##FFFFFF" speed="1" style="width: 130px; height: 130px" loop autoplay direction="1"
+                    mode="normal">
+                </lottie-player>
+                <h5 class="fw-bold">Welcome to giveaways</h5>
+                <div class="d-flex justify-content-center align-items-center gap-2 my-3">
+                    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                    <lord-icon src="https://cdn.lordicon.com/bqavqyaq.json" trigger="loop" delay="2000"
+                        style="width:30px;height:30px">
+                    </lord-icon>
+
+                    <p class="mt-4">Invest in one of our <strong>real estate</strong> plans and unlock your <strong>free
+                            giveaway</strong>!</p>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-outline-dark" data-bs-target="#exampleModalToggle2"
+                        data-bs-toggle="modal">Next</button>
+                </div>
+
+            </div>
+            <!-- <div class="modal-footer">
+                
+            </div> -->
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalToggleLabel2"><strong>Giveaways</strong></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex flex-column justify-content-center align-items-center">
+                <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                <lord-icon src="https://cdn.lordicon.com/abvsilxn.json" trigger="loop" delay="1000"
+                    style="width:70px;height:70px">
+                </lord-icon>
+                <div class="d-flex justify-content-center align-items-center gap-2">
+                    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                    <lord-icon src="https://cdn.lordicon.com/qhkvfxpn.json" trigger="loop" delay="2000"
+                        style="width:25px;height:25px">
+                    </lord-icon>
+                    <p class="mt-3">You have to <strong>invest</strong> in any of our <strong>real estate</strong> plans
+                        to unlock this feature.</p>
+                </div>
+                <div class="d-flex gap-2 justify-content-between align-items-center">
+                    <button class="btn btn-outline-dark rounded-3" data-bs-target="#exampleModalToggle"
+                        data-bs-toggle="modal">Back
+                    </button>
+                    <a href="{%url 'core:plans'%}" class="btn btn-dark rounded-3">Invest now</a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- GIVEAWAY MODAL -->
+
+
+<div class="content">
+
+    <!-- <h4>Plans <span class="badge bg-body-secondary">New</span></h4> -->
+    <div class="container d-flex align-items-center justify-content-between">
+        <a href="/" class="d-flex align-items-center gap-1 text-success">
+            <i class='bx fs-3 bxs-chevron-left'></i>
+            <p class="mt-3">return</p>
+        </a>
+        <!-- <div class="div ">
+            
+        </div> -->
+
+        <button class="btn position-relative" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
+            <script src="https://cdn.lordicon.com/lordicon.js"></script>
+            <lord-icon src="https://cdn.lordicon.com/lznlxwtc.json" trigger="loop" state="loop-bell"
+                style="width:35px;height:35px">
+            </lord-icon>
+            <span class="badge position-absolute top-0 end-0 translate-middle p-1 text-success bg-warning">New</span>
+        </button>
+
+    </div>
+
+    <!-- INVESTMENT PLAN -->
+
+    <div class="pricing-header p-3 pb-md-4 text-center">
+        <div class="d-flex align-items-center justify-content-center">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src="https://lottie.host/d62cf79a-ac2e-4726-92d8-1eed9cda42ee/CYmZIqDVCX.json"
+                background="##FFFFFF" speed="0.5" style="width: 150px; height: 150px" loop autoplay direction="1"
+                mode="normal"></lottie-player>
+        </div>
+        <h1 class="display-4" style="font-size: 3em; font-weight: 700;">Investment Plans</h1>
+        <p class="fs-5 ttt text-body-secondary">Quickly build an effective pricing table for your potential customers
+            with
+            this Bootstrap example. It’s built with default Bootstrap components and utilities with little
+            customization.</p>
+    </div>
+
+    
+
+    <main>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center d-flex align-items-center justify-content-between">
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">Free</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">$1,500<small
+                                class="text-body-secondary fw-light">/mo</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>10 users included</li>
+                            <li>2 GB of storage</li>
+                            <li>Email support</li>
+                            <li>Help center access</li>
+                        </ul>
+                        <button type="button" class="w-100 btn btn-lg steez">See details</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">Pro</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">$15,000<small
+                                class="text-body-secondary fw-light">/mo</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>20 users included</li>
+                            <li>10 GB of storage</li>
+                            <li>Priority email support</li>
+                            <li>Help center access</li>
+                        </ul>
+                        <button type="button" class="w-100 btn btn-lg steez">See details</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm border-dark">
+                    <div class="card-header py-3 text-bg-dark border-dark">
+                        <h4 class="my-0 fw-normal text-warning">Enterprise</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">$150,000+<small
+                                class="text-body-secondary fw-light">/mo</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>30 users included</li>
+                            <li>15 GB of storage</li>
+                            <li>Phone and email support</li>
+                            <li>Help center access</li>
+                        </ul>
+                        <button type="button" class="w-100 btn btn-lg steez">See details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- INVESTMENT PLAN -->
+
+
+    <!-- PROPERTY INVESTMENTS -->
+
+
+    <div class="pricing-header p-3 pb-md-4 text-center">
+        <div class="d-flex gap-3 justify-content-center align-items-center">
+            <h1 class="display-4" style="font-size: 3em; font-weight: 700;">Properties </h1>
+
+
+            <span class="badge fs-6 rounded-5" style="background: rgba(40, 54, 24, 0.671); color: #e9edc9;">Trending</span>
+        </div>
+        <p class="fs-5 ttt text-body-secondary">These properties have been sited in the best places over the world. We have carefully picked from a wide range of properties, offering <span class="text-primary">Comfort</span> and other factors.
+        </p>
+    </div>
+    <div class="container">
+        <div class="row d-flex justify-content-evenly gap-2">
+            {%for p in properties%}
+            <div class="col-lg-4 col-md-4 text-center">
+                <img src="{{p.image.url}}" class="bd-placeholder-img rounded-4" width="200" height="140" alt="">
+                <!-- <svg class="bd-placeholder-img rounded-4" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg> -->
+                <h2 class="property-name my-2">{{p.name}}</h2>
+                <p class="property-text">{{p.description}}.</p>
+                <div class="d-flex justify-content-between align-items-center px-5 w-100">
+                    <p>⭐⭐⭐⭐</p>
+                    <span class="badge bg-dark">-3%</span>
+                </div>
+                <p><a class="btn property-btn" href="{%url 'core:plan_detail' p.id%}">View</a></p>
+            </div><!-- /.col-lg-4 -->
+            {%endfor%}
+            <!-- PROPERTY INVESTMENTS -->
+
+        
+        </div>
+    </div>
+</div>
+
+    
+
+    
+{%endblock%}

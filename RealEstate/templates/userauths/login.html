@@ -1,0 +1,136 @@
+{%extends 'partials/base2.html'%}
+{%block title%}Login{%endblock%}
+{%load crispy_forms_tag%}
+{%load static%}
+
+{%block content%}
+
+
+<style>
+    body {
+        background: #ffeeba;
+    }
+
+    .container2 {
+        padding-top: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* margin-top: 15vh; */
+        height: 80vh;
+        width: 100%;
+    }
+
+    form {
+        display: flex;
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .form-control {
+        /* margin: 0px 20px; */
+        padding: 10px 10px;
+        border-radius: 15px;
+
+    }
+
+    .submit {
+        margin-top: 30px;
+        background: #283618;
+        border-radius: 15px;
+        /* background: #cec8202d; */
+        color: #e9edc9;
+        padding: 12px 26px;
+
+    }
+
+    .m {
+        margin: 15px 0;
+    }
+
+    .btn2 {
+        /* margin-top: 10px; */
+        border: 2px solid #283618;
+        border-radius: 15px;
+        /* background: #cec8202d; */
+        color: #283618;
+        padding: 12px 26px;
+    }
+
+    .container2 img {
+        object-fit: cover;
+        margin: 15px 0;
+    }
+
+    .cont {
+        top: 10px;
+        /* right: 10%; */
+        translate: (-50%, 50px);
+    }
+</style>
+<div class="container position-relative cont d-flex align-items-center justify-content-between">
+    <a href="/" class="d-flex align-items-center gap-1 text-success">
+        <i class='bx fs-3 bxs-chevron-left'></i>
+        <p class="mt-3">return</p>
+    </a>
+    <!-- <div class="div ">
+        
+    </div> -->
+
+    <button class="btn position-relative d-none" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
+        <i class='bx fs-3 bxs-chevron-left '></i>
+        <!-- <script src="https://cdn.lordicon.com/lordicon.js"></script>
+        <lord-icon src="https://cdn.lordicon.com/lznlxwtc.json" trigger="loop" state="loop-bell"
+            style="width:35px;height:35px">
+        </lord-icon> -->
+        <!-- <span class="badge position-absolute top-0 end-0 translate-middle p-1 text-success bg-warning">New</span> -->
+    </button>
+
+</div>
+
+<div class="container container2">
+    <div class="d-flex justify-content-center align-items-center">
+        <script src="https://cdn.lordicon.com/lordicon.js"></script>
+        <lord-icon src="https://cdn.lordicon.com/xzalkbkz.json" trigger="in" delay="1500" stroke="bold"
+            state="in-reveal" style="width:100px;height:100px">
+        </lord-icon>
+
+    </div>
+    <form method="post" action="{% url 'userauths:register' %}">
+        {% csrf_token %}
+        <h5 class="fw-bold">Login</h5>
+        <div class="d-flex flex-column justify-content-start">
+            {{form|crispy}}
+
+
+        </div>
+        <!-- <div class="d-flex flex-column justify-content-start">
+            <p class="fw-bold">Password</p>
+            <input type="password" class="form-control" name="password" placeholder="Password" required>
+
+
+        </div> -->
+        <!-- <div class="d-flex gap-3 align-items-center">
+            <input type="checkbox" required>
+            <p>I agree to the terms and conditions</p>
+        </div>
+         -->
+        <button type="submit" class="submit">Login</button>
+    </form>
+    <div class="my-2 m text-center">
+        <h5>Or</h5>
+    </div>
+    <div class="d-flex justify-content-center align-items-center">
+        <a href="{%url 'userauths:register'%}" class="btn btn2">Register</a>
+    </div>
+    <div class="mt-2">
+        <small>King Phero Inc. 2024&copy; text-center</small>
+    </div>
+</div>
+
+
+
+{% endblock %}

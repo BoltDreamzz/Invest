@@ -1,0 +1,78 @@
+{%extends 'partials/base2.html'%}
+{%block title%}Details{%endblock%}
+{%load static%}
+{%block content%}
+<style>
+  body {
+    background: #e9edc9;
+  }
+  .container {
+    margin-top: 10vh;
+  }
+</style>
+
+<div class="container">
+  <div class="container d-flex align-items-center justify-content-between">
+    <a href="{%url 'core:plans'%}" class="d-flex align-items-center gap-1 text-success">
+        <i class='bx fs-3 bxs-chevron-left'></i>
+        <p class="mt-3">return</p>
+    </a>
+    <!-- <div class="div ">
+        
+    </div> -->
+
+    <button class="btn position-relative" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
+        <script src="https://cdn.lordicon.com/lordicon.js"></script>
+        <lord-icon src="https://cdn.lordicon.com/lznlxwtc.json" trigger="loop" state="loop-bell"
+            style="width:35px;height:35px">
+        </lord-icon>
+        <span class="badge position-absolute top-0 end-0 translate-middle p-1 text-success bg-warning">New</span>
+    </button>
+
+</div>
+<h1>Still in progress...</h1>
+  <!-- ### MODAL ### -->
+
+  <!-- <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Modal 1</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Show a second modal and hide this one with the button below.
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Open second
+            modal</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Hide this modal and show the first with the button below.
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to
+            first</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Open first modal</button> -->
+
+  <!-- ### MODAL ### -->
+</div>
+
+
+{%endblock%}

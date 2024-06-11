@@ -1,0 +1,85 @@
+{%extends 'partials/base.html'%}
+{%block title%}Home{%endblock%}
+{%load static%}
+{%block content%}
+<style>
+    .hero {
+        min-height: 100%;
+
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.507) 0%, rgba(0, 0, 0, 0.473) 40%),
+        url("{% static 'home_media/IMG1.jpg' %}") no-repeat;
+        /* backdrop-filter: blur(20%); */
+        /* background: url("{%static 'home_media/IMG1.jpg'%}") no-repeat; */
+        background-position: center;
+        /* background-attachment: fixed; */
+        background-size: cover;
+        height: 100vh;
+        padding: 5px 20px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+
+    }
+
+    .star {
+        right: 5%;
+        padding: 10px 30px;
+        border-radius: 50px;
+        /* transform: translate(50%, -50%); */
+        top: 25%;
+        background: #cec8202d;
+        backdrop-filter: blur(10px);
+
+
+        /* bottom: 20px; */
+        /* left: 50%; */
+        /* transform: translateX(-50%); */
+        /* background: #fff3cd; */
+        border: 1px solid #ffeeba;
+        /* padding: 10px 20px; */
+        /* border-radius: 5px; */
+        border: 1px solid #ffeeba94;
+
+    }
+
+    @media (max-width: 480px) {
+        .star {
+            padding: 7px 17px;
+            top: 15%;
+        }
+    }
+</style>
+
+<div class="hero">
+    <div class="alert position-fixed star small-alert d-flex justify-content-center align-items-center">
+        <lord-icon src="https://cdn.lordicon.com/sbrtyqxj.json" trigger="loop" delay="1000" colors="primary:#e8e230"
+            style="width:20px;height:20px" class="me-2">
+        </lord-icon>
+        <a class="text-warning" id="liveToastBtn" href="#" style="font-size: 14px;"> Free giveaways !</a>
+        <!-- <small class=""></small> -->
+    </div>
+    <div class="left">
+        <h1 class="hero-text">Invest in <br><span>Real estate</span>.</h1>
+        <p class="hero-p">
+            Unlock your financial future with top-tier property investments. Enjoy high returns, steady income,
+            and expert guidance. Start building lasting wealth today !
+        </p>
+        <div class="d-flex gap-2">
+            <a href="{%url 'core:plans'%}" class="cta btn fw-bold">Start investing</a>
+            <!-- <a href="#" class="cta2 btn fw-bold">Start investing</a> -->
+
+        </div>
+
+
+        <!-- <a href="#" class="arrow-down">
+            <lord-icon src="https://cdn.lordicon.com/xcrjfuzb.json" trigger="loop" colors="primary:#ffeeba"
+                style="width:40px;height:40px">
+            </lord-icon>
+        </a> -->
+    </div>
+
+    
+</div>
+
+
+{% endblock %}
